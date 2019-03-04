@@ -7,11 +7,19 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div>
-    <p>Hello World</p>
-    <button type="button" onclick="draw()">Create fractal</button>
-</div>
-<script src="main.js"></script>
+    <div class="page-style">
+        <h3>Hello World! Welcome to my fractal program.</h3>
+        <p>Fractals are mathematical patterns based on recursion.</p>
+        <p>Adjust the slider to chose the color of the fractal. Experiment!</p>
+        <input type="range" min="1" max="360" value="240" class="slider" id="colorRange">
+        <p><button class = 'button' type="button" onclick="draw()">Create fractal</button></p>
+    </div>
 
+    <div class="before-fractal-style">
+        <script src="main.js"></script>
+    </div>
+    <div class="after-fractal-style">
+
+    </div>
 </body>
 </html>

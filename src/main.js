@@ -1,9 +1,11 @@
 // Create Canvas
 let myCanvas = document.createElement("canvas");
-myCanvas.width=1000;
-myCanvas.height=1000;
+myCanvas.width=1420;
+myCanvas.height=500;
 document.body.appendChild(myCanvas);
 let ctx = myCanvas.getContext("2d");
+let colorSlider = document.getElementById('colorRange');
+
 
 // Start drawing
 function checkIfBelongsToMandelbrotSet(x,y) {
@@ -39,7 +41,9 @@ function draw() {
                 ctx.fillStyle = '#000';
                 ctx.fillRect(x, y, 1, 1); // Draw a black pixel
             } else {
-                ctx.fillStyle = 'hsl(240, 100%, ' + belongsToSet + '%)';
+                let colorValue = colorSlider.value;
+                ctx.fillStyle = `hsl(${colorValue}, 100%, ${belongsToSet}%)`;
+                // ctx.fillStyle = 'hsl(240, 100%, ' + belongsToSet + '%)';
                 ctx.fillRect(x, y, 1, 1); // Draw a colorful pixel
             }
         }
