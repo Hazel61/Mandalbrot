@@ -6,8 +6,6 @@ document.body.appendChild(myCanvas);
 let ctx = myCanvas.getContext("2d");
 let colorSlider = document.getElementById('colorRange');
 
-
-// Start drawing
 function checkIfBelongsToMandelbrotSet(x,y) {
     let realComponentOfResult = x;
     let imaginaryComponentOfResult = y;
