@@ -8,10 +8,12 @@
 </head>
 <body>
     <div class="page-style">
-        <h3>Hello World! Welcome to my fractal program.</h3>
+        <h2>Hello World! Welcome to my fractal program.</h2>
         <p>Fractals are mathematical patterns based on recursion.</p>
         <p>Adjust the slider to chose the color of the fractal. Experiment!</p>
         <input type="range" min="1" max="360" value="240" class="slider" id="colorRange">
+        <p>Adjust the slider to chose the size of the fractal.</p>
+        <p><input type="range" min="100" max="2000" value="400" class="sizeSlider" id="sizeRange"></p>
         <p><button class = 'button' type="button" onclick="draw()">Create fractal</button></p>
     </div>
 

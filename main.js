@@ -1,10 +1,12 @@
 // Create Canvas
 let myCanvas = document.createElement("canvas");
 myCanvas.width=1420;
-myCanvas.height=500;
+myCanvas.height=1200;
 document.body.appendChild(myCanvas);
 let ctx = myCanvas.getContext("2d");
 let colorSlider = document.getElementById('colorRange');
+let sizeSlider = document.getElementById('sizeRange');
+
 
 function checkIfBelongsToMandelbrotSet(x,y) {
     let realComponentOfResult = x;
@@ -27,9 +29,10 @@ function checkIfBelongsToMandelbrotSet(x,y) {
 }
 
 function draw() {
-    let magnificationFactor = 200;
-    let panX = 2;
-    let panY = 1.5;
+    let sizeValue = sizeSlider.value;
+    let magnificationFactor = sizeValue;
+    let panX = 1;
+    let panY = 1;
     for (let x = 0; x < myCanvas.width; x++) {
         for (let y = 0; y < myCanvas.height; y++) {
             let belongsToSet =
