@@ -54,8 +54,9 @@ canvas {
     font-size: 14px;
     border-radius: 4px;
 }
-button:focus { outline: none;}
-
+button:focus {
+    outline: none;
+}
 .sk-circle {
     margin-left: 10px;
     width: 60px;

@@ -1,4 +1,4 @@
-// Create Canvas
+// Create Canvas and collect user data
 let myCanvas = document.createElement("canvas");
 myCanvas.width=1420;
 myCanvas.height=1000;
@@ -7,6 +7,7 @@ let ctx = myCanvas.getContext("2d");
 let colorSlider = document.getElementById('colorRange');
 let sizeSlider = document.getElementById('sizeRange');
 
+// Make a spinner to show page is loading.
 function generateSpinner(entryPoint) {
     let entryPointElement = document.querySelector(entryPoint);
     entryPointElement.classList.add('sk-circle');
@@ -18,9 +19,8 @@ function generateSpinner(entryPoint) {
     }
     return entryPointElement;
 }
-
+//Hide spinner until fractal starts loading.
 let spinner = generateSpinner('#loader');
-
 function toggleDisplay(element) {
     if (element.style.display === 'none') {
         element.style.display = 'block';
@@ -28,7 +28,7 @@ function toggleDisplay(element) {
         element.style.display = 'none';
     }
 }
-
+// Find fractal components
 function checkIfBelongsToMandelbrotSet(x,y) {
     let realComponentOfResult = x;
     let imaginaryComponentOfResult = y;
@@ -47,13 +47,10 @@ function checkIfBelongsToMandelbrotSet(x,y) {
     }
     return 0;   // Return zero if in set
 }
-
-
+// Draw fractal. Hide spinner when fractal loaded.
 const panX = 2;
 const panY = 1;
-
 function drawMandelbrotLine(y) {
-
     let magnificationFactor = sizeSlider.value;
     for (let x = 0; x < myCanvas.width; x++) {
         let belongsToSet =
@@ -74,8 +71,8 @@ function drawMandelbrotLine(y) {
     } else {
         toggleDisplay(spinner);
     }
-
 }
+// Display the spinner, resize window and slow fractal creation so spinner can appear.
 function draw() {
     toggleDisplay(spinner);
     myCanvas.width = window.innerWidth;
